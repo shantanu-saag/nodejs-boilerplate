@@ -10,8 +10,7 @@ router.get('/', function(req, res, next) {
       if (error) throw error;
       var post_query = new Date().getTime();
       var duration = (post_query - pre_query) / 1000;
-      console.log("DURATION TAKEN =====>>>", duration)      
-      res.send(results)
+      res.render('index', { title: 'Success', duration: duration });
     });
      
     connection.end();
